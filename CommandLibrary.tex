@@ -1,0 +1,76 @@
+%Creates boxed equations
+\newcommand{\boxedeqn}[1]{%
+  \[\fbox{%
+      \addtolength{\linewidth}{-2\fboxsep}%
+      \addtolength{\linewidth}{-2\fboxrule}%
+      \begin{minipage}{\linewidth}%
+      \begin{equation}#1\end{equation}%
+      \end{minipage}%
+    }\]%
+}
+
+
+%Euler angles
+\newcommand{\eulerX}[1]{%
+\left[\begin{array}{c c c}
+1 & 0 &0\\
+0 & \cos\left(#1\right) & \sin\left(#1\right)\\
+ 0 & -\sin\left(#1\right)& \cos\left(#1\right) 
+\end{array}\right]}
+
+
+\newcommand{\eulerY}[1]{%
+\left[\begin{array}{c c c}
+\cos\left(#1\right) &0& -\sin\left(#1\right) \\
+0 & 1 & 0\\
+ \sin\left(#1\right)& 0 &\cos\left(#1\right)
+\end{array}\right]}
+
+\newcommand{\eulerZ}[1]{%
+\left[\begin{array}{c c c}
+\cos\left(#1\right) & \sin\left(#1\right)& 0 \\
+ -\sin\left(#1\right)& \cos\left(#1\right)& 0 \\
+0 & 0& 1 
+\end{array}\right]}
+
+%P-norm
+\newcommand{\myNorm}[2]{%
+\left\|#1\right\|_{#2}
+}
+
+%Vector Stuff
+\newcommand{\vect}[1]{\overset{\rightharpoonup}{#1}}
+
+
+%Matrix stuff
+\newcommand{\diag}{{\rm diag}}
+\newcommand{\myspan}{{\rm span}}
+\newcommand{\Mat}{{\rm Mat}}
+\newcommand{\Ker}{{\rm Ker}}
+\newcommand{\sign}{{\rm sgn}}
+\newcommand{\tr}{{\rm tr}\,}
+
+%Calculus stuff
+\newcommand{\mydn}[3]{\frac{d^{#3}#1}{d#2^{#3}}}
+\newcommand{\myd}[2]{\frac{d #1}{d#2}}
+\newcommand{\myDn}[3]{\frac{\partial^{#3}#1}{\partial #2^{#3}}}
+\newcommand{\myD}[2]{\frac{\partial #1}{\partial #2}}
+
+%Review responses
+\newcommand{\responseitem}[2]{
+\item #1\newline
+\begin{tcolorbox}[width=\linewidth ,colback=lightgray,boxrule=0pt]
+#2
+\end{tcolorbox}
+}
+
+
+%Definition
+\newcommand{\isdef}{:=}
+
+
+%Letters
+\newcommand{\BBC}{{\mathbb C}}
+\newcommand{\BBR}{{\mathbb R}}
+\newcommand{\BBU}{{\mathbb U}}
+\newcommand{\BBX}{{\mathbb X}}

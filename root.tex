@@ -1,0 +1,91 @@
+\documentclass[12pt]{report}
+%	You will have to call this as
+%
+%	pdflatex root.tex
+%	pdflatex root.tex
+%	biber root
+%	pdflatex root.tex
+%
+%	If you use Texmaker or Texstudio, under "Configure Tex(*)/Commands/Bib(la)tex" put "biber %"
+%
+%
+%
+%
+%
+%	riboch, 2017-01-28
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Helper files
+\include{DocumentSetup}
+\include{CommandLibrary}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Front Page material
+\title{Whatever-You-Want-To-Call-It Logbook} 
+
+\author{riboch}
+
+\usepackage{datetime} %So that I can put the date of the most recent compile.
+	\yyyymmdddate 
+	\renewcommand{\dateseparator}{}
+
+\date{\today-\currenttime}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Bibliography
+\usepackage[backend=biber,style=numeric,doi=false,isbn=false,url=false,sorting=none]{biblatex}
+\addbibresource{Citations/Citations.bib}%
+\addbibresource{Citations/Citations-Books.bib}%
+
+%Annotated bibliography
+\renewbibmacro*{finentry}{%
+  \setunit{\addperiod\newline \textbf{Annotation:} }%
+  \printfield{annotation}%
+  \finentry}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+  
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+%Run Organization_Dates.sh first, then copy the contents of LOOKATME.txt
+\include{2017/2017}
+%\include{2018/2018}
+%\include{2019/2019}
+%\include{2020/2020}
+
+
+\part{Projects}
+\input{Projects/Projects}
+
+\part{End Matter}
+\begin{appendices}
+\input{PaperNotes/PaperNotes}
+\input{Derivations/Derivations}
+\input{TopicNotes/TopicNotes}
+\end{appendices}
+
+
+%Bibliography
+\clearpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\nocite{*}%Gets all the citations
+\printbibliography
+
+
+%\input{Glossary}
+%\glsaddall
+%\glossarystyle{altlistgroup}
+%\printglossaries
+
+\clearpage
+\printindex
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

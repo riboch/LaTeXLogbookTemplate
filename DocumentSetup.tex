@@ -1,0 +1,128 @@
+%Packages and document setup
+
+%\usepackage{fullpage}
+\usepackage[all]{xy}
+
+\usepackage{graphicx} 	% Figures
+\usepackage{subfigure}	% Subfigures
+\usepackage{float}		% Better handling of Floats
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{wasysym}
+
+\usepackage[toc,page]{appendix}
+
+\usepackage{relsize}
+\usepackage{multicol}
+\usepackage{multirow}
+
+\usepackage{color}		% Colored text
+\usepackage{tcolorbox}	% For paper review responses
+
+	
+\usepackage{latexsym}
+\usepackage[psamsfonts]{eucal}
+
+%\usepackage{cite}	
+%\usepackage{citesort}
+
+
+\usepackage[pdftex]{hyperref}
+\hypersetup{pdfborder={0 0 0}}
+
+\usepackage[margin=1in,paperwidth=8.5in,paperheight=11in]{geometry}
+
+
+
+\usepackage{cancel} %So that I could use the cancel command.
+\usepackage{pdfpages} % So that I could include pdf documents
+\usepackage{makecell} 
+\usepackage{soul} % For striking things out. \sout or \st
+\usepackage{enumerate} 
+%\setlength{\parindent}{0in}
+\usepackage{amsthm} % For things such as Theorem
+	\newtheorem{theorem}{Theorem}[chapter] %Increment theorems by chapter
+	\newtheorem{proposition}{Proposition}[chapter]
+	\newtheorem{lemma}{Lemma}[chapter]
+	\newtheorem{corollary}{Corollary}[chapter]
+	\newtheorem{definition}{Definition}[chapter]
+	\newtheorem{remark}{Remark}[chapter]
+	\newtheorem{question}{Question}[chapter]
+	\newtheorem{problem}{Problem}
+\usepackage{imakeidx} % For the index.
+	\makeindex[intoc]
+\usepackage{algorithm} %For nice looking algorithms
+%\usepackage{algorithmicx}
+\usepackage{algpseudocode} %For nice looking algorithms
+\usepackage{array}
+\usepackage{mathrsfs} % For script letter, \mathscr
+
+%\usepackage{pgfplots}
+\usepackage{tikz} % For commutative diagrams.	
+\usepackage{tikz-cd} % For commutative diagrams.	
+\usepackage{mathtools} % For mathclap (underbrace without space)
+\usepackage{pgfgantt} %For Gantt charts.
+\usepackage{xcolor,colortbl} 
+	\definecolor{Grey}{gray}{0.9}
+	\definecolor{White}{gray}{1}
+
+
+\usepackage[T1]{fontenc}%For Biber and odd fonts
+%\usepackage[T1]{fontenc}% So that listings gives the correct ASCII characters
+\usepackage{listings} % For code
+\lstset{
+%basicstyle=\tiny,
+basicstyle=\tiny,
+keywordstyle=\color{blue},
+commentstyle=\color{green},
+stringstyle=\ttfamily,
+numbers=left,%numberstyle=\noncopynumber,
+columns=fullflexible
+}
+
+
+
+%\usepackage[toc]{glossaries}
+%\makeglossaries
+%\usepackage{epstopdf}
+%\usepackage{pdflscape}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Document Look and Feel
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+%%%\fancyfoot[R]{Choroszucha\ \thepage}
+\lhead{\nouppercase\leftmark}
+\rhead{{YOUR NAME HERE (DocumentSetup.tex)} \thepage}
+
+
+%\fancyfoot{}
+%%\renewcommand{\headrulewidth}{0pt}
+%%\renewcommand{\footrulewidth}{0pt}
+
+
+%\setlength{\paperwidth}{8.5in}
+%\setlength{\paperheight}{11in}
+
+%\setlength{\voffset}{-0.5in}
+%\setlength{\hoffset}{0in}
+%\setlength{\textwidth}{6.5in}%6in
+%\setlength{\textheight}{9in}
+%\setlength{\oddsidemargin}{0mm}
+%\setlength{\evensidemargin}{0mm}
+%\setlength{\topmargin}{0in}
+%\setlength{\headheight}{0.25in}
+%\setlength{\headsep}{0.25in}
+%\setlength{\marginparsep}{5mm}
+%\setlength{\marginparwidth}{0.75in}
+%\setlength{\footskip}{0.25in}
+
+
+\setlength{\headheight}{15pt}
+\setlength\parskip{0.125in}

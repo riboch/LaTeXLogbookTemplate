@@ -1,0 +1,61 @@
+\section{Moore - Principal Component Analysis In Linear Systems: Controllability, Observability, and Model Reduction - 1981}
+\label{App:PaperNotes:MoorePCA1981}
+
+This is paper \cite{Moore1981}.
+
+
+\begin{proposition}[Proposition 4]
+Define:
+\[
+S_F\isdef \left\{v:v\in {\rm im}(F(t)),\ t\in[t_1,t_2]\right\}
+\]
+
+Let $K$ be a fixed integer, $1\leq k \leq n$.  Over the class of piecewise continuous $F_A(t)$ satisfying $\dim\{S_{F_A}\}=K$, the residuals 
+\begin{eqnarray}
+JF&\isdef &\int_{t_1}^{t_2} ||F(t)-F_A(t)||_F^2 dt\\
+JS&\isdef &\max_{||v||=1} \int_{t_1}^{t_2} ||v^T(F(t)-F_A(t))||^2 dt
+\end{eqnarray}
+are minimized with 
+\begin{equation}
+F_A(t)=F_K(t)\isdef \sum_{i=1}^k v_i f_i^T(t).
+\end{equation}
+The error residuals are 
+\begin{eqnarray}
+JF&=&\sum_{i=k+1}^n \sigma_i^2\\
+JS&=&\sigma_{k+1}^2
+\end{eqnarray}
+\end{proposition}
+
+\begin{proof}
+It is easy to verify that $F_k(t)$ gives the stated residuals.  For an approximation $F_A$ which minimizes $JF$ or $JS$, it is necessarily true that $\int_{t_1}^{t_2}F_A(t)E_A^T(T)dt=0$ where $E_A(t)=F(t)-F_A(t)$.  Hence, for such an approximation 
+\begin{equation}
+W^2=\int_{t_1}^{t_2}F_A(t)F_A^T(t) dt+\int_{t_1}^{t_2}E_A(t)E_A^T(t)dt
+\end{equation}
+If $\int_{t_1}^{t_2}F_A(t)F_A^T(t) dt$ has rank $k$, it follows from perturbation properties of singular values that 
+\begin{eqnarray}
+JF&=& \tr\int_{t_1}^{t_2}E_A(t)E_A^T(t)dt\geq \sum_{i=k+1}^n \sigma_i^2\\
+JS&=&\left\|\int_{t_1}^{t_2}E_A(t)E_A^T(t)dt\right\|\geq \sigma_{k+1}^2
+\end{eqnarray}
+\end{proof}
+
+
+
+
+
+\begin{definition}[Output-Normal Form]
+\label{Paper:Moore1981:OutputNorm}
+A model $(A,B,C)$ is output-normal on $[0,T]$ if $W_c^2(P)=\Sigma^4$ and $W_o^2(P)=I$.
+\end{definition}
+
+
+\begin{definition}[Input-Normal Form]
+\label{Paper:Moore1981:InputNorm}
+A model $(A,B,C)$ is input-normal on $[0,T]$ if $W_c^2(P)=I$ and $W_o^2(P)=\Sigma^4$.
+\end{definition}
+
+
+
+\begin{definition}[Balanced Form]
+\label{Paper:Moore1981:BalancedNorm}
+A model $(A,B,C)$ is balanced on $[0,T]$ if $W_c^2(P)=\Sigma^2$ and $W_o^2(P)=\Sigma^2$.
+\end{definition}
