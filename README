@@ -1,0 +1,10 @@
+1. Run Organization_Date.sh
+2. Copy the includes from LOOKATME.txt into root.tex.
+3. Modify the files (start by uncommenting \include{2017})
+4. Run:
+    pdflatex root.tex
+    pdflatex root.tex
+    biber root
+    pdflatex root.tex
+    
+    
